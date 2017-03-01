@@ -1,0 +1,32 @@
+.container {
+    margin-top: 20px;
+}
+
+.jumbotron {
+    margin-top: 20px;
+}
+
+body {
+    background-color: DarkSlateGray;
+}
+
+.form-control {
+    width: 300px;
+}
+
+.form-group {
+    display: inline-block;
+}
+
+form {
+    display: inline-block;
+}
+
+button {
+    margin-top: -3px;
+    margin-left: 5px;
+}
+
+label {
+    color: #eee;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Weather website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/javascript/script.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="form-group">
+            <label for="selected_value">Izberi kraj</label>
+            <select class="form-control" id="selected_value">
+                <option>Izberi kraj</option>
+                {% set i = 1 %}
+                {% for city in cities|sort %}
+                    <option>{{city}}</option>
+                    {% set i = i + 1 %}
+                {% endfor %}
+            </select>
+        </div>
+        <form method="post" action="/">
+            <input type="hidden" id="val" name="selected_city">
+            <button type="submit" class="btn btn-info">Izberi</button>
+        </form>
+
+        <div class="jumbotron">
+            {% if data %}
+                <h1>Vreme v kraju {{data.name}}</h1>
+                <p>Opis: {{data.weather[0].description}}</p>
+                <p>Trenutna temperatura: {{data.main.temp|round(1)}} &deg;C</p>
+            {% else %}
+                <h1>Vreme po Sloveniji</h1>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
