@@ -7,9 +7,11 @@ threadsafe: yes
 handlers:
 - url: /assets
   static_dir: assets
+  application_readable: true
 
 - url: .*
   script: main.app
+
 
 libraries:
 - name: webapp2
