@@ -4,8 +4,8 @@
 import os
 import jinja2
 import webapp2
-import secrets
-import readFile
+from utils import readFile
+from utils import secrets
 from google.appengine.api import urlfetch
 
 
