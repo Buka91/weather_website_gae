@@ -5,7 +5,8 @@ import os
 import json
 
 city_list = list()
-not_append = [u"Mestna", u"Občina"]
+city_ids = list()
+not_append = [u"Mestna", u"Občina", u"Republ"]
 
 def read_data():
     if len(city_list) == 0:
@@ -15,3 +16,4 @@ def read_data():
                 data_line = json.loads(line)
                 if data_line['country'] == 'SI' and data_line['name'][:6] not in not_append:
                     city_list.append(data_line['name'])
+                    city_ids.append(str(data_line['_id']))

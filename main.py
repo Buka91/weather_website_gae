@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from handlers import base
+import webapp2
+from handlers.base import WeatherHandler
 
-app = base.webapp2.WSGIApplication([
-    base.webapp2.Route('/', base.WeatherHandler)
+app = webapp2.WSGIApplication([
+    webapp2.Route('/', WeatherHandler, name = "main")
 ], debug=True)

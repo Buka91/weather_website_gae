@@ -9,6 +9,10 @@ handlers:
   static_dir: assets
   application_readable: true
 
+- url: /task.*
+  script: main.app
+  login: admin
+
 - url: .*
   script: main.app
 

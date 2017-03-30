@@ -29,10 +29,10 @@
         </form>
 
         <div class="jumbotron">
-            {% if data %}
-                <h1>Vreme v kraju {{data.name}}</h1>
-                <p>Opis: {{data.weather[0].description}}</p>
-                <p>Trenutna temperatura: {{data.main.temp|round(1)}} &deg;C</p>
+            {% if name and description and temp %}
+                <h1>Vreme v kraju {{name}}</h1>
+                <p>Opis: {{description}}</p>
+                <p>Trenutna temperatura: {{temp|round(1)}} &deg;C</p>
             {% else %}
                 <h1>Vreme po Sloveniji</h1>
             {% endif %}
